@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-kraft text-ledgerInk font-body min-h-screen antialiased selection:bg-vintageRed selection:text-paperWhite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-wide;
+  }
+
+  /* Accessible high-contrast keyboard focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-vintageRed ring-offset-2 ring-offset-paperWhite;
+  }
+}
+
+/* Custom Ledger Aesthetics */
+.ledger-dotted-line {
+  background-image: radial-gradient(circle, #1f2421 1px, transparent 1.5px);
+  background-position: bottom;
+  background-size: 8px 3px;
+  background-repeat: repeat-x;
+}
+
+/* Manila Tag visual styles */
+.price-tag-card {
+  position: relative;
+  background: #FAF6EE;
+  border: 1px solid #1f2421;
+  border-radius: 4px;
+}
+
+.price-tag-card::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background: #E6D5B8; /* match background */
+  border: 1px solid #1f2421;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Scrollbar customization - vintage look */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6D5B8;
+  border-left: 1px solid #1f2421;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C2D3C2;
+  border: 2px solid #E6D5B8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BAC8B9;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
