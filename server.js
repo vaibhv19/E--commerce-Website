@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -20,6 +21,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Basic Route
 app.get('/api/health', (req, res) => {
