@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Build outputs
+dist/
+build/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
